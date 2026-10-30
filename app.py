@@ -68,7 +68,7 @@ if st.session_state.fase == "configuracion":
 
         with st.spinner("El lider tecnico esta preparando tu primera pregunta..."):
             response = client.models.generate_content(
-                model="gemini-2.5-flash",
+                model="gemini-3.8-flash",
                 contents=prompt_inicial
             )
             st.session_state.pregunta_activa = response.strip()
@@ -127,7 +127,7 @@ elif st.session_state.fase == "entrevista":
 
                 with st.spinner("El lider tecnico esta analizando tu respuesta..."):
                     response = client.models.generate_content(
-                        model="gemini-2.5-flash",
+                        model="gemini-3.8-flash",
                         contents=prompt_adaptativo
                     )
                     st.session_state.pregunta_activa = response.text.strip()
@@ -171,7 +171,7 @@ elif st.session_state.fase == "evaluacion":
             """
 
             response = client.models.generate_content(
-                model="gemini-2.5-flash",
+                model="gemini-3.8-flash",
                 contents=prompt_reporte_md,
                 config=types.GenerateContentConfig(
                     response_mime_type="application/json"
