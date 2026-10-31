@@ -71,7 +71,7 @@ if st.session_state.fase == "configuracion":
                 model="gemini-3.8-flash",
                 contents=prompt_inicial
             )
-            st.session_state.pregunta_activa = response.strip()
+            st.session_state.pregunta_activa = response.text.strip()
         st.rerun()
 
 # Logica conversacional y control de preguntas
